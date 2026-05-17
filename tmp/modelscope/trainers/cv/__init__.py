@@ -10,4 +10,4 @@
 #   - CartoonTranslationTrainer: 卡通翻译训练器
 #   - OCRRecognitionTrainer: OCR识别训练器
 #   - NeRFReconAccTrainer: NeRF重建训练器
-#   - VisionEfficientTuningTrainer: 视觉高效微调训练器
+#   - VisionEfficientTuningTrainer: 视觉高效调优训练器

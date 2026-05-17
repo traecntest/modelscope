@@ -6,4 +6,4 @@
 #   - build_trainer: 构建训练器的工厂函数
 #   - Hook, Priority: 训练钩子机制
 #   - build_dataset_from_file: 从文件构建数据集
-#   - 支持NLP、CV、音频、多模态等领域的训练器
+#   - 支持NLP、CV、音频、多模态领域的训练器

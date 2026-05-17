@@ -1,14 +1,97 @@
 # NLP模型子模块
 # 作用: 提供自然语言处理领域的各类模型定义
 # 主要接口/类:
-#   - BertForMaskedLM, BertModel: BERT系列模型
-#   - GPT3ForTextGeneration, GPTMoEForTextGeneration: GPT系列模型
-#   - LlamaForTextGeneration, Llama2ForTextGeneration: LLaMA系列模型
-#   - QWenForTextGeneration: 通义千问系列模型
-#   - ChatGLMForConditionalGeneration: ChatGLM系列模型
-#   - BloomForTextGeneration: BLOOM系列模型
-#   - T5ForConditionalGeneration: T5系列模型
-#   - LSTMForTokenClassificationWithCRF: LSTM系列模型
-#   - MegatronBertModel: Megatron BERT模型
-#   - ModelForTextClassification, ModelForTokenClassification等: 任务特定模型
-#   等数十种NLP模型
+#   - BartForTextErrorCorrection: BART文本纠错模型
+#   - BertForMaskedLM: BERT掩码语言模型
+#   - BertForTextRanking: BERT文本排序模型
+#   - BertForSentenceEmbedding: BERT句子嵌入模型
+#   - BertForSequenceClassification: BERT序列分类模型
+#   - BertForTokenClassification: BERT Token分类模型
+#   - BertForDocumentSegmentation: BERT文档分割模型
+#   - BertModel: BERT模型
+#   - BertConfig: BERT配置
+#   - SiameseUieModel: Siamese UIE模型
+#   - BloomModel: Bloom模型
+#   - BloomForTextGeneration: Bloom文本生成模型
+#   - CodeGeeXForCodeTranslation: CodeGeeX代码翻译模型
+#   - CodeGeeXForCodeGeneration: CodeGeeX代码生成模型
+#   - GLM130bForTextGeneration: GLM130b文本生成模型
+#   - CsanmtForTranslation: Csanmt翻译模型
+#   - CanmtForTranslation: Canmt翻译模型
+#   - PolyLMForTextGeneration: PolyLM文本生成模型
+#   - DebertaV2ForMaskedLM: DebertaV2掩码语言模型
+#   - DebertaV2Model: DebertaV2模型
+#   - ChatGLMForConditionalGeneration: ChatGLM条件生成模型
+#   - ChatGLMTokenizer: ChatGLM分词器
+#   - ChatGLMConfig: ChatGLM配置
+#   - ChatGLM2ForConditionalGeneration: ChatGLM2条件生成模型
+#   - ChatGLM2Tokenizer: ChatGLM2分词器
+#   - ChatGLM2Config: ChatGLM2配置
+#   - GPTNeoModel: GPTNeo模型
+#   - GPT2Model: GPT2模型
+#   - GPT3ForTextGeneration: GPT3文本生成模型
+#   - DistributedGPT3: 分布式GPT3模型
+#   - GPTMoEForTextGeneration: GPTMoE文本生成模型
+#   - DistributedGPTMoE: 分布式GPTMoE模型
+#   - TextClassificationHead: 文本分类头
+#   - TransformersModel: Transformers模型
+#   - LSTMModel: LSTM模型
+#   - LSTMForTokenClassificationWithCRF: LSTM带CRF的Token分类模型
+#   - MegatronBertConfig: MegatronBERT配置
+#   - MegatronBertForMaskedLM: MegatronBERT掩码语言模型
+#   - MegatronBertModel: MegatronBERT模型
+#   - MGLMForTextSummarization: MGLM文本摘要模型
+#   - PalmForTextGeneration: Palm文本生成模型
+#   - PlugMentalConfig: PlugMental配置
+#   - PlugMentalModel: PlugMental模型
+#   - PlugMentalForSequenceClassification: PlugMental序列分类模型
+#   - PoNetForMaskedLM: PoNet掩码语言模型
+#   - PoNetModel: PoNet模型
+#   - PoNetConfig: PoNet配置
+#   - SpaceForDialogIntent: Space对话意图模型
+#   - SpaceForDialogModeling: Space对话建模模型
+#   - SpaceForDST: Space对话状态跟踪模型
+#   - TableQuestionAnswering: 表格问答模型
+#   - StarForTextToSql: Star文本转SQL模型
+#   - SbertForFaqQuestionAnswering: Sbert FAQ问答模型
+#   - SbertForMaskedLM: Sbert掩码语言模型
+#   - SbertForSequenceClassification: Sbert序列分类模型
+#   - SbertForTokenClassification: Sbert Token分类模型
+#   - SbertModel: Sbert模型
+#   - T5ForConditionalGeneration: T5条件生成模型
+#   - ModelForFeatureExtraction: 特征提取模型
+#   - ModelForInformationExtraction: 信息抽取模型
+#   - ModelForTextClassification: 文本分类模型
+#   - SingleBackboneTaskModelBase: 单骨干任务模型基类
+#   - ModelForTextGeneration: 文本生成模型
+#   - ModelForTextRanking: 文本排序模型
+#   - ModelForTokenClassification: Token分类模型
+#   - ModelForTokenClassificationWithCRF: 带CRF的Token分类模型
+#   - ModelForMachineReadingComprehension: 机器阅读理解模型
+#   - UniTEForTranslationEvaluation: UniTE翻译评估模型
+#   - UserSatisfactionEstimation: 用户满意度评估模型
+#   - VecoConfig: Veco配置
+#   - VecoForMaskedLM: Veco掩码语言模型
+#   - VecoForSequenceClassification: Veco序列分类模型
+#   - VecoForTokenClassification: Veco Token分类模型
+#   - VecoModel: Veco模型
+#   - DocumentGroundedDialogGenerateModel: 文档对话生成模型
+#   - DocumentGroundedDialogRetrievalModel: 文档对话检索模型
+#   - DocumentGroundedDialogRerankModel: 文档对话重排序模型
+#   - XLMRobertaConfig: XLM-Roberta配置
+#   - XLMRobertaModel: XLM-Roberta模型
+#   - LlamaForTextGeneration: Llama文本生成模型
+#   - LlamaConfig: Llama配置
+#   - LlamaModel: Llama模型
+#   - LlamaTokenizer: Llama分词器
+#   - LlamaTokenizerFast: Llama快速分词器
+#   - Llama2ForTextGeneration: Llama2文本生成模型
+#   - Llama2Config: Llama2配置
+#   - Llama2Model: Llama2模型
+#   - Llama2Tokenizer: Llama2分词器
+#   - Llama2TokenizerFast: Llama2快速分词器
+#   - QWenForTextGeneration: 通义千问文本生成模型
+#   - QWenConfig: 通义千问配置
+#   - QWenModel: 通义千问模型
+#   - QWenTokenizer: 通义千问分词器
+#   - SentenceEmbedding: 句子嵌入模型

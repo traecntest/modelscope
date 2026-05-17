@@ -5,4 +5,4 @@
 #   - build_preprocessor: 构建预处理器的工厂函数
 #   - PREPROCESSORS: 预处理器注册表
 #   - Compose, ToTensor, Filter: 通用预处理操作
-#   - 支持NLP、CV、音频、多模态等领域的数据预处理
+#   - 支持NLP、CV、音频、多模态领域的数据预处理

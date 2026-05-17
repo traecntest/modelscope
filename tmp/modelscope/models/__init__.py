@@ -6,4 +6,4 @@
 #   - Head, TorchHead: 模型头部基类
 #   - build_model: 构建模型的工厂函数
 #   - MODELS, BACKBONES, HEADS: 模型注册表
-#   - 支持NLP、CV、音频、多模态、科学计算等领域的模型
+#   - 支持NLP、CV、音频、多模态、科学计算领域的模型
